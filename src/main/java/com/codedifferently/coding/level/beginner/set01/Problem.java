@@ -16,7 +16,20 @@ public class Problem {
 
     public static Boolean avengersAssemble(boolean dcHero, boolean avengerHero) {
 
-        return null;
+        if (dcHero == false && avengerHero == false){
+            return true;
+        }
+
+        else if(dcHero == false && avengerHero){
+            return true;
+        }
+
+        else if (dcHero && avengerHero == false){
+            return false;
+        }
+        else {
+            return true;
+        }
 
     }
 
@@ -32,8 +45,13 @@ public class Problem {
      */
 
     public static Boolean nearValue(int n) {
+        if(( Math.abs(n) >=90 && Math.abs(n)<=100) || (Math.abs(n) >= 190 && Math.abs(n)<=200)){
+            return true;
+        }
 
-        return null;
+
+        return false;
+
     }
 
      /* Problem 4
@@ -47,8 +65,9 @@ public class Problem {
      */
 
     public static String missingLetter(String letter, int n) {
-
-        return null;
+        String firstHalf = letter.substring(0,n);
+        String secondHalf = letter.substring(n+1, letter.length());
+        return firstHalf+secondHalf;
     }
 
     /* Problem 5
@@ -62,8 +81,8 @@ public class Problem {
      */
 
     public static String wordOfDay(String word) {
-
-        return null;
+        char lastLetter = word.charAt(word.length()-1);
+        return lastLetter + word + lastLetter;
     }
 
     /* Problem 6
@@ -75,8 +94,10 @@ public class Problem {
      */
 
     public static Boolean beginWithHi(String phrase) {
-
-        return null;
+        if (phrase.substring(0,2).equals("hi")){
+            return true;
+        }
+        return false;
     }
 
      /* Problem 7
@@ -89,8 +110,7 @@ public class Problem {
      */
 
     public static Boolean containTeen(int one, int two, int three){
-
-        return null;
+        return (!(one >= -12 && one <=12) || !(two >= -12 && two <=12) || !(three >= -12 && three <=12));
     }
 
     /* Problem 8
@@ -104,12 +124,11 @@ public class Problem {
      */
 
     public static Boolean startWithIx(String phrase) {
-
-        return null;
+        return (phrase.substring(0,3) .equals("mix") || phrase.substring(1,3).equals("ix"));
     }
 
      /* Problem 9
-    Provide two numbers, evalute both numbers to see which one is nearest to the value 10.
+    Provide two numbers, evaluate both numbers to see which one is nearest to the value 10.
     Some numbers may have the same range in how near they are to 10; such as 13 and 7 both are 3 from 10;
     In that case, we would consider that event a tie.
     Tip: Math.abs(n) returns the absolute value of a number
@@ -119,9 +138,18 @@ public class Problem {
     near10(13, 7) --> 0
      */
 
-    public static Integer near10(int one, int two){
+    public static Integer near10(int one, int two) {
+        if (Math.abs(10-one) < Math.abs(10 - two)) {
+            return one;
+        }
 
-        return null;
+        else if (Math.abs(10-one) > Math.abs(10-two)) {
+            return two;
+        }
+
+        else {
+            return 0;
+        }
     }
 
     /* Problem 10
@@ -133,7 +161,17 @@ public class Problem {
      */
 
     public static Boolean containE(String str) {
+        int eCounter = 0;
+        for (int i=0; i<str.length(); i++) {
+            if (str.charAt(i) == 'e') {
+                eCounter++;
+            }
+        }
 
-        return null;
+        if(1 <= eCounter && eCounter <= 3){
+            return true;
+        }
+
+        return false;
     }
 }
