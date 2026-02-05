@@ -110,7 +110,7 @@ public class Problem {
      */
 
     public static Boolean containTeen(int one, int two, int three){
-        return (!(one >= -12 && one <=12) || !(two >= -12 && two <=12) || !(three >= -12 && three <=12));
+        return(!(one >= -12 && one <=12) || !(two >= -12 && two <=12) || !(three >= -12 && three <=12));
     }
 
     /* Problem 8
